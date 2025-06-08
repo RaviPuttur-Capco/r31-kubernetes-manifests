@@ -24,4 +24,15 @@ spec: #define the behaviour of the deployement
             cpu: "200m"
         ports:
         - containerPort: 3015
-
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flower-app-svc
+spec:
+  selector:
+    app: web
+  ports:
+  - port: 3017 #Service port number on which you want to access the application
+    targetPort: 3015 #on which port number your application is running
+  type: LoadBalancer
