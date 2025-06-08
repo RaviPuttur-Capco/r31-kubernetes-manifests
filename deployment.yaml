@@ -13,7 +13,7 @@ spec: #define the behaviour of the deployement
         app: web
     spec:
       containers:
-      - name: test-container
+      - name: flower-contianer
         image: putturravi/sre-test-image:1.0
         resources:
           limits:
